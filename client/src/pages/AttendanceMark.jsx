@@ -7,17 +7,14 @@ const AttendanceMarking = () => {
   const [date, setDate] = useState('');
   const [attendance, setAttendance] = useState({});
 
-  // Function to handle attendance change
   const handleAttendance = async (rollNumber, status) => {
     try {
-      // Make the API call to mark attendance
       await axios.post('http://localhost:3000/api/attendance/mark-attendance', {
         studentId:rollNumber,
         date,
         status,
       });
       
-      // Update the local attendance state
       setAttendance((prevAttendance) => ({
         ...prevAttendance,
         [rollNumber]: status,
@@ -31,7 +28,6 @@ const AttendanceMarking = () => {
     <div className="p-8 ml-64">
       <h2 className="text-3xl font-bold mb-6">Mark Attendance</h2>
 
-      {/* Date Picker */}
       <div className="mb-6">
         <label className="block text-lg font-semibold mb-2">Select Date:</label>
         <input
@@ -42,7 +38,6 @@ const AttendanceMarking = () => {
         />
       </div>
 
-      {/* Attendance Table */}
       <table className="w-full text-left border border-gray-300 rounded-lg">
         <thead>
           <tr className="bg-gray-200">

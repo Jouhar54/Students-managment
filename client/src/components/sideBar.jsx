@@ -1,5 +1,5 @@
 import { Link, useLocation } from 'react-router-dom';
-import { FaUserCheck, FaClipboardList, FaUserPlus } from 'react-icons/fa'; // Importing an icon for 'Add Student'
+import { FaUserCheck, FaClipboardList, FaUserPlus } from 'react-icons/fa'; 
 
 const Sidebar = () => {
     const location = useLocation();
